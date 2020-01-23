@@ -1,0 +1,28 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Bellotto}{2019a}]{Lec7}
+Bellotto, N. 2019a.
+\newblock {\em Lecture 7: Hidden Markov Model 2}, page~10.
+\newblock University of Lincoln.
+
+\bibitem[\protect\astroncite{Bellotto}{2019b}]{Lec7.2}
+Bellotto, N. 2019b.
+\newblock {\em Lecture 7: Hidden Markov Model 2}, pages 6--8.
+\newblock University of Lincoln.
+
+\bibitem[\protect\astroncite{Cuayahuitl}{2019a}]{PriorSampling}
+Cuayahuitl, H. 2019a.
+\newblock {\em PriorSampling.py}.
+\newblock University of Lincoln.
+
+\bibitem[\protect\astroncite{Cuayahuitl}{2019b}]{Workshop3}
+Cuayahuitl, H. 2019b.
+\newblock {\em Workshop 3}, page~4.
+\newblock University of Lincoln.
+
+\bibitem[\protect\astroncite{Jurafsky and Martin}{2019}]{bookA}
+Jurafsky, D. and Martin, J. 2019.
+\newblock {\em Speech and Language Processing, 3rd edition draft, appendix
+  chapter A}.
+
+\end{thebibliography}

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: AIReport.aux
+The style file: humanbio.bst
+Database file #1: REF.bib
+Warning--empty publisher in bookA
+You've used 5 entries,
+            1940 wiz_defined-function locations,
+            493 strings with 3992 characters,
+and the built_in function-call counts, 1664 in all, are:
+= -- 149
+> -- 41
+< -- 8
++ -- 14
+- -- 12
+* -- 116
+:= -- 287
+add.period$ -- 14
+call.type$ -- 5
+change.case$ -- 26
+chr.to.int$ -- 3
+cite$ -- 6
+duplicate$ -- 86
+empty$ -- 137
+format.name$ -- 19
+if$ -- 343
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 10
+newline$ -- 27
+num.names$ -- 15
+pop$ -- 50
+preamble$ -- 1
+purify$ -- 31
+quote$ -- 0
+skip$ -- 59
+stack$ -- 0
+substring$ -- 78
+swap$ -- 23
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 1
+while$ -- 14
+width$ -- 0
+write$ -- 63
+(There was 1 warning)
