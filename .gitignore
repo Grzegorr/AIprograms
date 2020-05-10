@@ -1,0 +1,15 @@
+#####Reports to be ignored####
+Semester1/AIReport
+Semester2/DogsAss/AIReport
+
+####Data to be ignored, but not its structure##########
+Semester2/DogsAss/DogsData/resized_test1
+Semester2/DogsAss/DogsData/resized_test1_5
+Semester2/DogsAss/DogsData/resized_test1_10
+Semester2/DogsAss/DogsData/test1
+Semester2/DogsAss/DogsData/train
+Semester2/DogsAss/DogsData/resized_train
+Semester2/DogsAss/DogsData/resized_train1_5
+Semester2/DogsAss/DogsData/resized_train1_10
+Semester2/RNN/training_checkpoints/
+
