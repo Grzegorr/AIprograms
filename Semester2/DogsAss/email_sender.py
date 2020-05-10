@@ -3,8 +3,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText 
 from email.mime.base import MIMEBase 
 from email import encoders 
+import os.path
   
 def send_email(subject, message, attachment_path):
+    #IF NO ATTACHMENT DONT SEND EMAIL
+    if not os.path.isfile(attachment_path):
+        return
     msg = MIMEMultipart() 
     msg['From'] = "sochgreg@gmail.com"
     msg['To'] = "19765251@students.lincoln.ac.uk"

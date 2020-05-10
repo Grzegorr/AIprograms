@@ -8,12 +8,12 @@ class Resizer:
             path = "DogsData/train/dog." + str(i) + ".jpg"
             img = cv2.imread(path,1)
             resized = cv2.resize(img,  (500, 400))
-            path = "DogsData/resized_train/dog." + str(i) + ".jpg"
+            path = "DogsData/resized_train1/dog." + str(i) + ".jpg"
             cv2.imwrite(path,resized)
             path = "DogsData/train/cat." + str(i) + ".jpg"
             img = cv2.imread(path,1)
             resized = cv2.resize(img,  (500, 400))
-            path = "DogsData/resized_train/cat." + str(i) + ".jpg"
+            path = "DogsData/resized_train1/cat." + str(i) + ".jpg"
             cv2.imwrite(path,resized)
 
     #Resizing test data to 500x400
