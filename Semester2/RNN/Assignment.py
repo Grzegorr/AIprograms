@@ -278,6 +278,7 @@ print(ger_train[-1])
 
 # Try experimenting with the size of that dataset
 num_examples = 30000
+path_to_file = "Dataset/ger-train.txt"
 input_tensor, target_tensor, inp_lang, targ_lang = load_dataset(path_to_file, num_examples)
 # Calculate max_length of the target tensors
 max_length_targ, max_length_inp = max_length(target_tensor), max_length(input_tensor)
