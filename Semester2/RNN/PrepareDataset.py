@@ -66,7 +66,7 @@ class DatasetPreparer:
         en_test_tensor, en_test_tokenizer = self.tokenize(en_test)
         ger_test_tensor, ger_test_tokenizer = self.tokenize(ger_test)
         #all vocab for tokenizing
-        dummy, en_train_tokenizer = self.tokenize(en_train)
+        dummy, en_train_tokenizer = self.tokenize(en_all_vocab)
         #Getting area 
         if if_test == True:
             print("   ")
@@ -240,8 +240,8 @@ def loss_function(real, pred):
 
 if __name__ == "__main__":
     
-    #choose between "train", "learn", "both"
-    MODE = "both"
+    #choose between "train", "translate", "both"
+    MODE = "translate"
     
     DP = DatasetPreparer(True)
     en_token,  ger_token = DP.returnInTarTokens()
@@ -285,7 +285,7 @@ if __name__ == "__main__":
             return batch_loss
             
     if MODE == "train" or MODE == "both":
-        EPOCHS = 2
+        EPOCHS = 10
         for epoch in range(EPOCHS):
             start = time.time()
             enc_hidden = Enc.initialize_hidden_state()
@@ -324,7 +324,8 @@ if __name__ == "__main__":
             attention_weights = tf.reshape(attention_weights, (-1, ))
             attention_plot[t] = attention_weights.numpy()
             predicted_id = tf.argmax(predictions[0]).numpy()
-            result += ger_token.index_word[predicted_id] + ' '
+            if predicted_id != 1 and predicted_id != 2:
+                result += ger_token.index_word[predicted_id] + ' '
             if ger_token.index_word[predicted_id] == '<end>':
                 return result, sentence, attention_plot
             # the predicted ID is fed back into the model
@@ -357,6 +358,8 @@ if __name__ == "__main__":
         checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
         print("   ")
         print("##### Trying Some Translations From Learnig Dataset ####")
+        print("Sentence: , Should be translated into: ")
+        sentence, translation = translate(u"I think we need moratoria that hold firm.")
         print("Sentence: Resumption of the session, Should be translated into: Wiederaufnahme der Sitzungsperiode")
         sentence, translation = translate(u"Resumption of the session")
         print("Sentence: " + sentence + "Was translated to: " + translation)
@@ -367,18 +370,21 @@ if __name__ == "__main__":
         print("   ")
         
         #translating all sentences
-        outF = open("translation.txt", "w")
+        outTrans = open("translation.txt", "w")
+        outOriginal = open("org.txt", "w")
         lines = io.open("Dataset/ger_test.txt").read().strip().split('\n')
         for line in lines:
             #print(line)
             ger,  en = re.split(r'\t+', line)
-            print(en)
+            #print(en)
             #print(en)
             #print()
             #print(ger)
             sentence, translation = translate(en)
-            outF.write(ger.encode('utf-8') + "\t" + en.encode('utf-8') + "\n")
-        outF.close()
+            outTrans.write(translation.encode('utf-8') + "\n")
+            outOriginal.write(ger.encode('utf-8') + "\n")
+        outOriginal.close()
+        outTrans.close()
             
         
 
